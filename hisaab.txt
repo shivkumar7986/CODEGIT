@@ -1,1 +1,3 @@
 aaj ka hissab hai = 1200 rs
+
+20 dec ka hissab = 4000 rs
