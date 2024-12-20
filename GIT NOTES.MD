@@ -145,4 +145,4 @@ ho
 
   - if the coly(collabrator) switch back to main brach , but he is not seeing the changes
   now he want to get the updated code , he should have to pull the updated code 
-    git pull -> pull means fetch and merge together
+    git pull -> pull means fetch and merge together .
