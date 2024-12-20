@@ -74,6 +74,8 @@ GIT BRANCHING =>
  - to switch branch => git switch filename  , ex => git branch feature/footer 
 commit is importent 
 
+  - to create and switch branch at once => git branch -C feature/any
+
 
 HOW TO MERGE ? 
 First we should be in main branch. Then use this command : git merge fileYouWantToMerge 
@@ -81,3 +83,66 @@ example => git merge feature/navbaar
 
 HANDLING CONFLICT DURING MERGING=>
   -MERGING TECHNIQUES => ff merging
+
+
+
+STASHING =>
+ jab aap kisi branch mein kaam kr rhe ho and aapne kuchh code likha hai and aapne us
+code ko commit nahi kiya hai, aur aap doosri branch mein jaane ki koshish krte ho
+to git aapko bolta hai ki bhai saved nahi changes delete o jaayege hum chaahe to un
+chnages ko delete hone yaa fir un chnages ko draft kr skte hai, jab bhi draft
+karege to wo changes naa hi delete honge na hi add hobnge but beech mein kahi dale
+rahege fir aap us branch mein jab waapas aaye to wo changes waapas se apply kr skte
+ho  
+
+ git stash => to save your uncommited data in the particular branch memory
+  if you wnat your draft data back ==> git stash apply
+ 
+ clearing git stash  ==> git stash clear 
+
+
+
+ GITHUB WORK =>
+
+ - COMMON STEPS -
+
+- main banda folder and initial files banaayega
+- ab usse github par daal de
+- collaborators add kare
+- 
+- saare bande us repo se cloning karein  => git clone (github url)
+- [VERY IMPORTANT] apni branch create karein => do not work on main branch , crete another brnch ex=> git switch -C feature/nav , 
+- apna code usi branch mein likhein 
+  ex- i added some feature like navbaar , footer etc.
+-  complete hone par commit dein and push kar
+
+    first we have to add the files in - git add .
+    then commit - git commit -m "feature added etc."
+    then add push on git hub -> git push -u origin feature/name
+
+-  inform karein teammate ko about the commit 
+    - ex: sahil did his job , * main person can only merge the file , so sahil have to inform him
+
+- merger banda fetch krega and merge karega and     
+  - fist the main person has to fetch the feture or any updated work
+    git fetch -> it show the new fetch braches 
+  - merger have to see the branch using ->
+     git branch , sometimes it does't show the branch
+     merger have to switch to the fetched branch -> ex-  git switch feature/nav ,
+     hence , the merger has switched to the feature/nav 
+
+  - if the merger like the code -> 
+      he has to switch back to the main branch -> git switch main
+      now he want to merge => git merge feature/nav
+      boom gys the merge operation was sucessfull , now we can that the code in vs code is merged.
+
+
+      - but this merged code is available only on main person system.
+        now the main person has to push the code on the github.
+        command => git push origin main -> to push
+
+  - now main person will inform the collabrator , you code is accepted and added to main branch .
+
+  - if the coly(collabrator) switch back to main brach , but he is not seeing the changes
+  now he want to get the updated code , he should have to pull the updated code 
+    git pull -> pull means fetch and merge together
